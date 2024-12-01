@@ -1,40 +1,76 @@
-import Taro from '@tarojs/taro';
-import { useState } from 'react';
-import { View, Input, Button } from '@tarojs/components'
+import { useState, useEffect } from 'react';
+import { View, Text } from '@tarojs/components';
 import './index.scss'
 
-// hello world
+function Index() {
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime((prevTime) => prevTime + 1); // 每秒增加 1
+    }, 1000);
+
+    return () => clearInterval(timer); // 清理定时器
+  }, []); // 空依赖数组
+
+  return (
+    <View>
+      <Text>计时器：{time} 秒</Text>
+    </View>
+  );
+}
+
+export default Index;
+
+
 // function Index() {
+//   const [data, setData] = useState(null);
+
+//   async function fetchData() {
+//     const response = await Taro.request({ url: 'https://api.example.com/data' });
+//     setData(response.data);
+//   }
+
+//   useEffect(() => {
+//     fetchData();
+//   }, []); // 空依赖数组，表示仅在组件挂载时运行一次
+
 //   return (
-//     <View className='home-page'>
-//       Taro Hello World! {age}
+//     <View>
+//       {data ? <Text>数据：{data.name}</Text> : <Text>加载中...</Text>}
 //     </View>
-//   )
+//   );
 // }
 
-// 场景 1：计数器
+// export default Index;
+
 // function Index() {
+
+//   // 模拟卸载 componentWillUnmount
+//   useEffect(() => {
+//     // 清理函数（类似 componentWillUnmount）
+//     return () => {
+//       console.log('组件卸载'); // 在组件卸载时触发
+//     };
+//   }, []);
+
 //   return (
 //     <View className='home-page'>
-//       Taro Hello World! {age}
+//       Hello useEffect!
 //     </View>
-//   )
+//   );
 // }
 
-// function Index() {
-//   const [age, setAge] = useState(18);
+// export default Index;
 
-//   return (
-//     <View className='home-page'>
-//       Taro Hello World! {age}
-//       <Button onClick={() => setAge(19)}>点击age变成19</Button>
-//     </View>
-//   )
-// }
 
-// // 场景 1：计数器
 // function Index() {
-//   const [count, setCount] = useState(0); // 初始化状态为 0
+//   const [count, setCount] = useState(0);
+
+//   // 模拟更新 componentDidUpdate
+//   useEffect(() => {
+//     console.log('组件更新');  // 当组件更新时触发
+//   }, [count]); // 依赖 count，count 变化时重新执行 effect
 
 //   return (
 //     <View>
@@ -43,89 +79,56 @@ import './index.scss'
 //       <Button onClick={() => setCount(count - 1)}>减少</Button>
 //     </View>
 //   );
-
 // }
 
-// function Index() {
-//   const [isOn, setIsOn] = useState(false); // 初始化状态为 false
+// export default Index;
 
-//   return (
-//     <View>
-//       <Button onClick={() => setIsOn(!isOn)}>
-//         {isOn ? '关' : '开'}
-//       </Button>
-//       <Text>状态：{isOn ? '已开启' : '已关闭'}</Text>
-//     </View>
-//   );
-
-// }
 
 // function Index() {
-//   const [inputValue, setInputValue] = useState(''); // 初始化为空字符串
+
+//   // 模拟 componentDidMount
+//   useEffect(() => {
+//     console.log('组件挂载');  // 当组件挂载时触发
+//   }, []);
 
 //   return (
-//     <View>
-//       <Input
-//         value={inputValue}
-//         placeholder="请输入内容"
-//         onInput={(e) => setInputValue(e.target.value)}
-//       />
-//       <Text>您输入的内容：{inputValue}</Text>
+//     <View className='home-page'>
+//       Hello useEffect!
 //     </View>
 //   );
 // }
 
-// function Index() {
-//   const [items, setItems] = useState([]); // 初始化为空数组
+// export default Index;
 
-//   const addItem = () => {
-//     const newItem = `项目 ${items.length + 1}`;
-//     setItems([ ...items, newItem ]); // 使用扩展运算符追加新项目
-//   };
+
+// function Index() {
+//   const [count, setCount] = useState(0);
+
+//   useEffect(() => {
+//     console.log(`当前 count 值为：${count}`);
+//   }, [count]); // 依赖 count，当 count 变化时触发
 
 //   return (
 //     <View>
-//       <Button onClick={addItem}>添加项目</Button>
-//       {items.map((item, index) => (
-//         <Text key={index}>{item}</Text>
-//       ))}
+//       <Text>当前计数：{count}</Text>
+//       <Button onClick={() => setCount(count + 1)}>增加</Button>
+//       <Button onClick={() => setCount(count - 1)}>减少</Button>
 //     </View>
 //   );
 // }
 
-function Index() {
-  const [username, setUsername] = useState(''); // 用户名状态
-  const [email, setEmail] = useState(''); // 邮箱状态
+// export default Index;
 
-  const handleSubmit = () => {
-    if (!username || !email) {
-      Taro.showToast({ title: '请输入完整信息', icon: 'none' });
-      return;
-    }
+// useEffect 的基础用法
 
-    console.log('提交成功：', { username, email });
-    Taro.showToast({ title: '提交成功', icon: 'success' });
+// function Index() {
+//   useEffect(() => {
+//     console.log(`fetch api data`);
+//   }, []);
+//   return (
+//     <View className='home-page'>
+//       Hello useEffect!
+//     </View>
+//   )
+// }
 
-    // 清空表单内容
-    setUsername('');
-    setEmail('');
-  };
-
-  return (
-    <View>
-      <Input
-        placeholder="请输入用户名"
-        value={username}
-        onInput={(e) => setUsername(e.target.value)}
-      />
-      <Input
-        placeholder="请输入邮箱"
-        value={email}
-        onInput={(e) => setEmail(e.target.value)}
-      />
-      <Button onClick={handleSubmit}>提交</Button>
-    </View>
-  );
-}
-
-export default Index
