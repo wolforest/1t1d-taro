@@ -3,5 +3,18 @@
   "projectname": "1t1d-taro",
   "setting": {
     "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/splash/index",
+          "pathName": "pages/splash/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }
