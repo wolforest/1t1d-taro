@@ -9,7 +9,7 @@ export type TaroRequestOptions = Parameters<typeof Taro.request>[0];
 export type Dict = Record<string, unknown>;
 
 export type RequestOptions = Pick<TaroRequestOptions, 'url' | 'method' | 'data'> & {
-  session?: boolean;
+  withToken?: boolean;
   withShowError?: boolean;
   withNeedLogin?: boolean;
 };
@@ -53,10 +53,10 @@ const showError = (response: any, withShowError = true): void => {
 
 // 主请求函数
 export async function request<T = Dict>(opts: RequestOptions): Promise<Response<T>> {
-  const { session = true, withShowError = true, withNeedLogin = true, method = 'GET' } = opts;
+  const { withToken = true, withShowError = true, withNeedLogin = true, method = 'GET' } = opts;
 
-  const token = session ? await getSessionToken() : undefined;
-  if (session && !token) {
+  const token = withToken ? await getSessionToken() : undefined;
+  if (withToken && !token) {
     throw new Error('No token, login required');
   }
 

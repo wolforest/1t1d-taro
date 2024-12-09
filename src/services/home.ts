@@ -7,7 +7,7 @@ export async function getWinIntroData(): Promise<IHomeData | null> {
   const res = await request({
     url: `/win/public/miniIntro`,
     method: 'GET',
-    session: false
+    withToken: false
   })
   if (res.success) {
     return res.data as IHomeData

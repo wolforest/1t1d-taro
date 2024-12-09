@@ -1,8 +1,11 @@
+import { useEffect } from 'react';
 import Taro from '@tarojs/taro';
 import { View, Text, Image } from '@tarojs/components';
 import { Button, Collapse } from '@nutui/nutui-react-taro';
+// import { getCurrentUser, slientLoginWithLoad } from '@utils/session'
 import { ArrowDown } from '@nutui/icons-react-taro';
-import type { IExpert, IQuestion } from '@interfaces/home';
+import type { IHomeData, IExpert, IQuestion } from '@interfaces/home';
+import { getWinIntroData } from '@services/home';
 import introImage from '@assets/intro.png';
 import expertsImage from '@assets/experts.png';
 import useSetState from '@hooks/useSetState';
@@ -19,8 +22,26 @@ const Index = () => {
     questions: [],
   })
 
+  const load = async() => {
+    Taro.showLoading({ title: '加载中...' })
+    const data: IHomeData | null = await getWinIntroData();
+    if (data) {
+      setState({
+        experts: (data?.experts ?? []) as IExpert[],
+        questions: (data?.questions ?? []) as IQuestion[],
+      });
+    }
+    Taro.hideLoading();
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      // slientLoginWithLoad(load);
+      load();
+    }, 200)
+  }, [])
+
   const onPaySuccess = () => {
-    // 模拟支付成功
     Taro.showLoading({ title: '加载中...' });
     Taro.showToast({ title: '支付成功' });
     setTimeout(() => {
@@ -58,6 +79,7 @@ const Index = () => {
         </Collapse>
       )}
       <View className={styles.pay}>
+        {/* <Button className={styles.btn} type="primary" fill="outline" onClick={onPaySuccess}>¥ 9.9 元 / 月</Button> */}
         <Button className={styles.btn} color="#d55f5b"  block onClick={onPaySuccess}>¥ 99 元 / 年</Button>
       </View>
     </View>

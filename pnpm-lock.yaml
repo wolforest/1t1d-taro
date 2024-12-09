@@ -29,6 +29,9 @@ importers:
       '@tarojs/plugin-html':
         specifier: 3.6.35
         version: 3.6.35(@tarojs/taro@3.6.35(@tarojs/helper@3.6.35)(@tarojs/runtime@3.6.35(@tarojs/shared@3.6.35))(@types/react@18.3.12)(postcss@8.4.49))
+      '@tarojs/plugin-mock':
+        specifier: ^0.0.9
+        version: 0.0.9
       '@tarojs/plugin-platform-alipay':
         specifier: 3.6.35
         version: 3.6.35(@tarojs/components@3.6.35(@tarojs/helper@3.6.35)(@tarojs/runtime@3.6.35(@tarojs/shared@3.6.35))(@tarojs/shared@3.6.35)(@types/react@18.3.12)(postcss@8.4.49)(react@18.3.1))(@tarojs/taro@3.6.35(@tarojs/helper@3.6.35)(@tarojs/runtime@3.6.35(@tarojs/shared@3.6.35))(@types/react@18.3.12)(postcss@8.4.49))
@@ -1477,6 +1480,9 @@ packages:
   '@tarojs/plugin-html@3.6.35':
     resolution: {integrity: sha512-yWP+PeVou+4Iso/WdEhkss363s4u616Tlbxoo+l9Srp8Cf/Z/xJia5fLMGLZlcFVlhgso1UEBHVa9SKR0C5o6g==}
 
+  '@tarojs/plugin-mock@0.0.9':
+    resolution: {integrity: sha512-Q4z4lHp2mHVByQJ8gtIq0Rct8vkEqvCmyTmv+EJNf9sJY3F5H1fmDNfgMVn2fyZj7TmxuSMq/FDtgNlEA4eTow==}
+
   '@tarojs/plugin-platform-alipay@3.6.35':
     resolution: {integrity: sha512-GqFES7JVs83gSsQglGhiYHTr8BgAexLl5GjHgEmlY7CYfKkqq2znWXilh8aiBq7/wlBdkjmNQ1E/aPhI7CfFnQ==}
     peerDependencies:
@@ -2721,6 +2727,10 @@ packages:
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
 
+  cors@2.8.5:
+    resolution: {integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==}
+    engines: {node: '>= 0.10'}
+
   cosmiconfig@7.1.0:
     resolution: {integrity: sha512-AdmX6xUzdNASswsFtmwSt7Vj8po9IuqXm0UXz7QKPuEUmPB4XyjGfaAr2PSuELMwkRMVH1EpIkX5bTZGRB3eCA==}
     engines: {node: '>=10'}
@@ -3720,6 +3730,10 @@ packages:
     resolution: {integrity: sha512-5uYhsJH8VJBTv7oslg4BznJYhDoRI6waYCxMmCdnTrcCrHA/fCFKoTFz2JKKE0HdDFUF7/oQuhzumXJK7paBRQ==}
     engines: {node: '>= 0.4'}
 
+  get-port@5.1.1:
+    resolution: {integrity: sha512-g/Q1aTSDOxFpchXC4i8ZWvxA1lnPqx/JHqcpIw0/LX9T8x/GBbi6YnlN5nhaKIFkT8oFsscUKgDJYxfwfS6QsQ==}
+    engines: {node: '>=8'}
+
   get-proxy@2.1.0:
     resolution: {integrity: sha512-zmZIaQTWnNQb4R4fJUEp/FC51eZsc6EkErspy3xtIYStaq8EB/hDIWipxsal+E8rz0qD7f2sL/NA9Xee4RInJw==}
     engines: {node: '>=4'}
@@ -3990,6 +4004,10 @@ packages:
   http-proxy-agent@5.0.0:
     resolution: {integrity: sha512-n2hY8YdoRE1i7r6M0w9DIw5GgZN0G25P8zLCRQ8rjXtTU3vsNFBI/vWK/UIeE6g5MUUz6avwAPXmL6Fy9D/90w==}
     engines: {node: '>= 6'}
+
+  http-proxy-middleware@1.3.1:
+    resolution: {integrity: sha512-13eVVDYS4z79w7f1+NPllJtOQFx/FdUW4btIvVRMaRlUY9VGstAbo5MOhLEuUgZFRHn3x50ufn25zkj/boZnEg==}
+    engines: {node: '>=8.0.0'}
 
   http-proxy-middleware@2.0.7:
     resolution: {integrity: sha512-fgVY8AV7qU7z/MmXJ/rxwbrtQH4jBQ9m7kp3llF0liB7glmFeVZFBepQb32T3y8n8k2+AEYuMPCpinYW+/CuRA==}
@@ -5161,6 +5179,9 @@ packages:
 
   path-to-regexp@3.3.0:
     resolution: {integrity: sha512-qyCH421YQPS2WFDxDjftfc1ZR5WKQzVzqsp4n9M2kQhVOo/ByahFoUNJfl58kOcEGfQ//7weFTDhm+ss8Ecxgw==}
+
+  path-to-regexp@6.3.0:
+    resolution: {integrity: sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==}
 
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
@@ -8321,6 +8342,19 @@ snapshots:
       - '@tarojs/taro'
       - supports-color
 
+  '@tarojs/plugin-mock@0.0.9':
+    dependencies:
+      body-parser: 1.20.3
+      cors: 2.8.5
+      express: 4.21.1
+      get-port: 5.1.1
+      glob: 7.2.3
+      http-proxy-middleware: 1.3.1
+      path-to-regexp: 6.3.0
+    transitivePeerDependencies:
+      - debug
+      - supports-color
+
   '@tarojs/plugin-platform-alipay@3.6.35(@tarojs/components@3.6.35(@tarojs/helper@3.6.35)(@tarojs/runtime@3.6.35(@tarojs/shared@3.6.35))(@tarojs/shared@3.6.35)(@types/react@18.3.12)(postcss@8.4.49)(react@18.3.1))(@tarojs/taro@3.6.35(@tarojs/helper@3.6.35)(@tarojs/runtime@3.6.35(@tarojs/shared@3.6.35))(@types/react@18.3.12)(postcss@8.4.49))':
     dependencies:
       '@tarojs/components': 3.6.35(@tarojs/helper@3.6.35)(@tarojs/runtime@3.6.35(@tarojs/shared@3.6.35))(@tarojs/shared@3.6.35)(@types/react@18.3.12)(postcss@8.4.49)(react@18.3.1)
@@ -9937,6 +9971,11 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
+  cors@2.8.5:
+    dependencies:
+      object-assign: 4.1.1
+      vary: 1.1.2
+
   cosmiconfig@7.1.0:
     dependencies:
       '@types/parse-json': 4.0.2
@@ -11142,6 +11181,8 @@ snapshots:
       has-symbols: 1.0.3
       hasown: 2.0.2
 
+  get-port@5.1.1: {}
+
   get-proxy@2.1.0:
     dependencies:
       npm-conf: 1.1.3
@@ -11470,6 +11511,16 @@ snapshots:
       debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
+
+  http-proxy-middleware@1.3.1:
+    dependencies:
+      '@types/http-proxy': 1.17.15
+      http-proxy: 1.18.1
+      is-glob: 4.0.3
+      is-plain-obj: 3.0.0
+      micromatch: 4.0.8
+    transitivePeerDependencies:
+      - debug
 
   http-proxy-middleware@2.0.7(@types/express@4.17.21):
     dependencies:
@@ -12664,6 +12715,8 @@ snapshots:
   path-to-regexp@0.1.10: {}
 
   path-to-regexp@3.3.0: {}
+
+  path-to-regexp@6.3.0: {}
 
   path-type@4.0.0: {}
 
