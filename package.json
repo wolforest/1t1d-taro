@@ -56,6 +56,7 @@
     "@tarojs/runtime": "3.6.35",
     "@tarojs/shared": "3.6.35",
     "@tarojs/taro": "3.6.35",
+    "classnames": "^2.5.1",
     "query-string": "^9.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

@@ -1,0 +1,111 @@
+.home {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f5f6f7;
+
+  .tags {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    .arrow {
+      width: 35px;
+      height: 100%;
+      padding: 8px 0 0 10px;
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+
+  .tabPaneContent {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .row {
+      margin-top: 10px;
+      font-size: 14px;
+      color: rgba(100, 100, 100, 1);
+      text-align: center;
+    }
+  }
+
+  .swiper {
+    height: calc(100vh - 110px);
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px 10px 0 10px;
+  }
+
+  .noTags {
+    height: calc(100vh - 65px);
+  }
+
+  .popupOverlay {
+    background: rgb(0, 0, 0, .2);
+  }
+
+  .loadMoreWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .loadingWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  // .tabPaneContent {
+  //   height: 100%;
+  //   overflow-y: auto;
+  //   -webkit-overflow-scrolling: touch;
+  // }
+
+  :global {
+    .nut-radiogroup-horizontal {
+      display: flex;
+      flex-flow: row nowrap;
+      width: calc(100% - 35px);
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 8px;
+    }
+
+    .nut-tabpane {
+      padding: 10px 15px;
+      background-color: rgb(245, 246, 247);
+    }
+
+    .nut-radio {
+      margin: 0 8px 5px 0!important;
+    }
+
+    .nut-tabs-content-wrap {
+      box-sizing: border-box;
+      padding: 0px;
+    }
+
+    .nut-tabpane {
+      box-sizing: border-box;
+      padding: 10px 10px 0 10px;
+    }
+  }
+
+  .allowWrap {
+    height: auto;
+    padding: 13px 10px 10px 10px;
+    box-sizing: border-box;
+    background-color: #f5f6f7;
+
+    :global {
+      .nut-radiogroup-horizontal {
+        flex-flow: row wrap;
+      }
+    }
+  }
+}

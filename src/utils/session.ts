@@ -46,13 +46,12 @@ export async function silentLogin(): Promise<boolean> {
   const res = await request({
     url: '/auth/login/wechat/code',
     method: 'POST',
-    session: false,
+    withToken: false,
     data: {
       appName: 'mxMini',
       code,
     },
   });
-
   if (res.success) {
     updateSessionInfo(res.data);
   }

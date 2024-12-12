@@ -1,3 +1,11 @@
 page {
   height: 100%;
 }
+
+:root,
+page {
+  height: 100%;
+  --nutui-color-primary: #d55f5b;
+  --nutui-tabs-titles-background-color: #fff;
+  --nutui-radio-button-background: #fff;
+}

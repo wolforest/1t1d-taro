@@ -1,14 +1,18 @@
-import React, { useEffect } from 'react'
 import { useDidShow, useDidHide } from '@tarojs/taro'
+import { silentLogin } from '@utils/session'
+
 // 全局样式
 import './app.scss'
 
 function App(props) {
-  // 可以使用所有的 React Hooks
-  useEffect(() => {})
+  const load = async () => {
+    silentLogin()
+  }
 
   // 对应 onShow
-  useDidShow(() => {})
+  useDidShow(() => {
+    load();
+  })
 
   // 对应 onHide
   useDidHide(() => {})

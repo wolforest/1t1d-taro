@@ -16,7 +16,7 @@ export async function getWinIntroData(): Promise<IHomeData | null> {
 }
 export async function getDocumentTreeData(): Promise<Response<any> | null> {
   const res = await request({
-    url: 'document/detail/byNo/240107030111111111100001?ownerId=1',
+    url: 'document/detail/byNo/tree',
     method: 'GET',
   })
   if (res.success) {
