@@ -69,7 +69,7 @@ export async function retryLogin(): Promise<string | undefined> {
   const res = await request({
     url: '/auth/login/wechat/token',
     method: 'POST',
-    session: false,
+    withToken: false,
     data: {
       accessToken: token,
     },
