@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Taro from '@tarojs/taro';
+import Taro, { useShareAppMessage } from '@tarojs/taro';
 import { View, Text, Image } from '@tarojs/components';
 import { Button, Collapse } from '@nutui/nutui-react-taro';
 // import { getCurrentUser, slientLoginWithLoad } from '@utils/session'
@@ -20,6 +20,14 @@ const Index = () => {
   const [state, setState] = useSetState<State>({
     experts: [],
     questions: [],
+  })
+
+  useShareAppMessage(() => {
+    return {
+      path: 'pages/intro/index',
+      title: '码仙之路',
+      imageUrl: '',
+    }
   })
 
   const load = async() => {
