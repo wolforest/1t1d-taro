@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Taro, { useShareAppMessage } from '@tarojs/taro';
+import Taro, { useShareAppMessage, useShareTimeline } from '@tarojs/taro';
 import { View, Text, Image } from '@tarojs/components';
 import { Button, Collapse } from '@nutui/nutui-react-taro';
 // import { getCurrentUser, slientLoginWithLoad } from '@utils/session'
@@ -26,6 +26,14 @@ const Index = () => {
     return {
       path: 'pages/intro/index',
       title: '码仙之路',
+      imageUrl: '',
+    }
+  })
+
+  useShareTimeline(() => {
+    return {
+      path: 'pages/intro/index',
+      title: '码仙之路,中英文技术干货精选，每天10篇中文、10篇英文、一年7300+篇...',
       imageUrl: '',
     }
   })
